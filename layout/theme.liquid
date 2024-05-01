@@ -1,10 +1,15 @@
 <html>
 <head>
 {{ content_for_header }}
-{% comment %} {{ 'style.css' | asset_url | stylesheet_tag}} {% endcomment %}
+{{ 'style.css' | asset_url | stylesheet_tag}}
 </head>
 <body>
+{% render 'header' %}
+{% comment %} 下面這行很像是 mvc @RenderBody() {% endcomment %}
 {{ content_for_layout }}
+
+
+
 {% comment %} {{ 'scripts.js' | asset_url | script_tag}} {% endcomment %}
 
 </body>
