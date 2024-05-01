@@ -1,0 +1,24 @@
+<h1>此為動態的cotact樣板</h1>
+{% form 'contact' %}
+  {{ form.errors | default_errors }}
+
+
+  <div class="email">
+    <label for="email">Email</label>
+    <input type="email" name="contact[email]" id="email" />
+  </div>
+
+  <div class="line">
+    <label for="line">Line</label>
+    <input type="text" name="contact[line]" id="line" />
+  </div>
+
+  <div class="message">
+    <label for="message">Message</label>
+    <textarea name="contact[body]" id="message"></textarea>
+  </div>
+
+  <div class="submit">
+    <input type="submit" value="Create" />
+  </div>
+{% endform %}
