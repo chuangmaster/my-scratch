@@ -5,4 +5,10 @@
     <h1>{{shop.name}}</h1>
     {% render 'header_menu' %}
     
+    {% if settings.show_search %}
+        <form action="/search">
+            <input type="search" name="q">
+            <button type="submit">Search</button>
+        </form>
+    {% endif %}
 </div>
