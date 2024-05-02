@@ -1,0 +1,58 @@
+<div class="header">
+  <div class="logo">
+    <img src="{{'img.webp' | asset_url}}" alt="">
+  </div>
+  <h1>{{ shop.name }}</h1>
+  {% render 'header_menu' %}
+
+  {% if section.settings.show_search %}
+    <form action="/search">
+      <input type="search" name="q">
+      <button type="submit">Search</button>
+    </form>
+  {% endif %}
+</div>
+<style>
+    .header{
+        /* 預設的概念 */
+        background: {{ section.settings.bg }};
+    }
+    h1{
+        font-size: {{ section.settings.shop_name_size}}px;
+    }
+</style>
+{% stylesheet %}
+  <style > 
+  .header {
+    padding: 10px;
+  }
+  </style>
+{% endstylesheet %}
+
+{% javascript %}
+  console.log("Hey from header section")
+{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_search",
+        "label": "Show search?",
+        "default": true
+      }, {
+        "type": "color",
+        "id": "bg",
+        "label": "Background color"
+      }
+      , {
+        "type": "number",
+        "id": "shop_name_size",
+        "label": "Shop name size",
+        "default": 30
+      }
+    ]
+  }
+{% endschema %}
