@@ -1,0 +1,8 @@
+{% comment %} {% paginate collection.products by 20 %}
+    {% for product in collection.products %}
+      <!-- product info -->
+    {% endfor %}
+  
+    {{ paginate | default_pagination }}
+  {% endpaginate %}
+   {% endcomment %}
